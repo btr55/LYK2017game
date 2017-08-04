@@ -19,8 +19,10 @@ public class GamePanel extends JPanel {	//panel soyut birşey. sınır koymadık
 	}
 
 	@Override
-	public void paintComponent(Graphics g) {	//gameComponents olmayacak. s çok önemli. paintComponent üst metodunu ovveride edip istediğimiz
+	public synchronized void paintComponent(Graphics g) {	//gameComponents olmayacak. s çok önemli. 
+															//paintComponent üst metodunu ovveride edip istediğimiz
 												//2D şekilleri boyattmak için düzenledik.
+		//synchronized ne zaman: addNewObjects metodunu oluşturunca yaptık. yine çakışma olmasın diye.
 		// TODO Auto-generated method stub
 
 		super.paintComponent(g);	//paintComponent parametresine g nesnesi çizdirdik.
